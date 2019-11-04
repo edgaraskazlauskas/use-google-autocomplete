@@ -184,14 +184,14 @@ export default function useGoogleAutocomplete({
   // will call again (since our input field changed).
   //
   // We can pass an addition predictions to just show the item we just selected.
-  const cancelQuery = (prediction: any) => {
+  const cancelQuery = (prediction?: any) => {
     if (abortController.current) abortController.current.abort()
 
     dispatch({
       type: 'OK',
       payload: {
         data: {
-          predictions: [prediction],
+          predictions: prediction ? [prediction] : [],
         },
       },
     })
