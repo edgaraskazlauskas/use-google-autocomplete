@@ -23,7 +23,7 @@ interface ReturnProps {
   isLoading: boolean
   error: null | string
   getPlaceDetails: any
-  cancelQuery: (id: string) => void
+  cancelQuery: (id?: string) => void
 }
 
 declare module 'use-google-autocomplete' {
